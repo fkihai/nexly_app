@@ -45,3 +45,7 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+
+# Custom rules file
+AGENT.MD
+agent.md
