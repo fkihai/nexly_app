@@ -8,6 +8,7 @@
 .buildlog/
 .history
 .svn/
+.vscode/
 migrate_working_dir/
 
 # IntelliJ related
@@ -49,3 +50,7 @@ app.*.map.json
 # Custom rules file
 AGENT.MD
 agent.md
+
+# Kotlin cache
+.kotlin/
+**/.kotlin/
