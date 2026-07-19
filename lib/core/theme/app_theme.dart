@@ -88,10 +88,9 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: lightIceBlue,
-        contentPadding:
-            EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-        hintStyle: TextStyle(
-            fontFamily: 'Inter', fontSize: 12.sp, color: mutedGray),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+        hintStyle:
+            TextStyle(fontFamily: 'Inter', fontSize: 12.sp, color: mutedGray),
         labelStyle: TextStyle(
             fontFamily: 'Inter',
             fontSize: 12.sp,
@@ -130,10 +129,10 @@ class AppTheme {
       ),
 
       // Card Design (Card Theme)
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: cardWhite,
         elevation: 1,
-        shadowColor: Colors.black.withOpacity(0.04),
+        shadowColor: Colors.black.withValues(alpha: 0.04),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16.r),
           side: const BorderSide(color: borderLine),
@@ -155,12 +154,12 @@ class AppTheme {
 
       // Switch Design (Toggle Switch Relay)
       switchTheme: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith<Color?>((states) {
-          if (states.contains(MaterialState.selected)) return Colors.white;
+        thumbColor: WidgetStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(WidgetState.selected)) return Colors.white;
           return Colors.white;
         }),
-        trackColor: MaterialStateProperty.resolveWith<Color?>((states) {
-          if (states.contains(MaterialState.selected)) return secondaryBlue;
+        trackColor: WidgetStateProperty.resolveWith<Color?>((states) {
+          if (states.contains(WidgetState.selected)) return secondaryBlue;
           return const Color(0xFFE2E8F0);
         }),
       ),
