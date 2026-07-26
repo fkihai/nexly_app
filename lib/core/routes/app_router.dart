@@ -20,7 +20,7 @@ final GlobalKey<NavigatorState> _shellNavigatorAccountKey =
 
 final GoRouter appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/provisioning',
+  initialLocation: '/dashboard',
   routes: <RouteBase>[
     GoRoute(
       path: '/auth',
