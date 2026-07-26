@@ -4,29 +4,36 @@ import 'package:nexly_app/features/account/presentation/pages/account_page.dart'
 import 'package:nexly_app/features/auth/presentation/pages/login_page.dart';
 import 'package:nexly_app/features/dashboard/presentation/pages/dashboard_page.dart';
 import 'package:nexly_app/features/history/presentation/pages/history_page.dart';
-import 'package:nexly_app/features/pairing/presentation/pages/1_scan_ap_page.dart';
+import 'package:nexly_app/features/provisioning/presentation/pages/provisioning_page.dart';
 import 'package:nexly_app/features/schedule/presentation/pages/schedule_page.dart';
 
-final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
-final GlobalKey<NavigatorState> _shellNavigatorDashboardKey = GlobalKey<NavigatorState>(debugLabel: 'dashboardShell');
-final GlobalKey<NavigatorState> _shellNavigatorScheduleKey = GlobalKey<NavigatorState>(debugLabel: 'scheduleShell');
-final GlobalKey<NavigatorState> _shellNavigatorHistoryKey = GlobalKey<NavigatorState>(debugLabel: 'historyShell');
-final GlobalKey<NavigatorState> _shellNavigatorAccountKey = GlobalKey<NavigatorState>(debugLabel: 'accountShell');
+final GlobalKey<NavigatorState> _rootNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: 'root');
+final GlobalKey<NavigatorState> _shellNavigatorDashboardKey =
+    GlobalKey<NavigatorState>(debugLabel: 'dashboardShell');
+final GlobalKey<NavigatorState> _shellNavigatorScheduleKey =
+    GlobalKey<NavigatorState>(debugLabel: 'scheduleShell');
+final GlobalKey<NavigatorState> _shellNavigatorHistoryKey =
+    GlobalKey<NavigatorState>(debugLabel: 'historyShell');
+final GlobalKey<NavigatorState> _shellNavigatorAccountKey =
+    GlobalKey<NavigatorState>(debugLabel: 'accountShell');
 
 final GoRouter appRouter = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/dashboard',
+  initialLocation: '/provisioning',
   routes: <RouteBase>[
     GoRoute(
       path: '/auth',
       builder: (BuildContext context, GoRouterState state) => const LoginPage(),
     ),
     GoRoute(
-      path: '/pairing',
-      builder: (BuildContext context, GoRouterState state) => const ScanApPage(),
+      path: '/provisioning',
+      builder: (BuildContext context, GoRouterState state) =>
+          const ProvisioningPage(),
     ),
     StatefulShellRoute.indexedStack(
-      builder: (BuildContext context, GoRouterState state, StatefulNavigationShell navigationShell) {
+      builder: (BuildContext context, GoRouterState state,
+          StatefulNavigationShell navigationShell) {
         return MainScaffold(navigationShell: navigationShell);
       },
       branches: <StatefulShellBranch>[
@@ -35,7 +42,8 @@ final GoRouter appRouter = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/dashboard',
-              builder: (BuildContext context, GoRouterState state) => const DashboardPage(),
+              builder: (BuildContext context, GoRouterState state) =>
+                  const DashboardPage(),
             ),
           ],
         ),
@@ -44,7 +52,8 @@ final GoRouter appRouter = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/schedule',
-              builder: (BuildContext context, GoRouterState state) => const SchedulePage(),
+              builder: (BuildContext context, GoRouterState state) =>
+                  const SchedulePage(),
             ),
           ],
         ),
@@ -53,7 +62,8 @@ final GoRouter appRouter = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/history',
-              builder: (BuildContext context, GoRouterState state) => const HistoryPage(),
+              builder: (BuildContext context, GoRouterState state) =>
+                  const HistoryPage(),
             ),
           ],
         ),
@@ -62,7 +72,8 @@ final GoRouter appRouter = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/account',
-              builder: (BuildContext context, GoRouterState state) => const AccountPage(),
+              builder: (BuildContext context, GoRouterState state) =>
+                  const AccountPage(),
             ),
           ],
         ),

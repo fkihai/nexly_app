@@ -1,4 +1,4 @@
-# Miscellaneous
+# Miscellaneous / OS
 *.class
 *.log
 *.pyc
@@ -8,49 +8,43 @@
 .buildlog/
 .history
 .svn/
-.vscode/
 migrate_working_dir/
 
-# IntelliJ related
+# IDE & Editors
+.idea/
+.vscode/
 *.iml
 *.ipr
 *.iws
-.idea/
 
-# Flutter/Dart/Pub related
-**/doc/api/
+# Flutter & Dart Caches / Build Output
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .pub-cache/
 .pub/
 /build/
+.fvm/
+.kotlin/
+**/.kotlin/
 
-# Platform directories to ignore (web, macos, windows, linux, ios)
+# Platform Build Artifacts
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Platform Directories (Ignored if unused)
 /web/
 /macos/
 /windows/
 /linux/
 /ios/
 
-# Symbolication related
+# Symbolication & Obfuscation
 app.*.symbols
-
-# Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-
-# FVM Version Cache
-.fvm/
-
-# Custom rules file
+# AI & Planning Docs
 AGENT.MD
 agent.md
-
-# Kotlin cache
-.kotlin/
-**/.kotlin/
+docs/
